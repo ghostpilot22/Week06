@@ -5,6 +5,7 @@ package game.card;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.Collections;
 
 public class App
 {
@@ -117,13 +118,12 @@ public class Deck
 	
 	public void shuffle()
 	{
-		
+		Collections.shuffle(cards);
 	}
 	
 	public Card draw()
 	{
-		return cards.get(0); // Temporary to get it to run.
-		// Fix this to make it pop the card off the deck.
+		return cards.remove(0); // Pops the zeroth card off the deck.
 	}
 }
 
@@ -148,7 +148,7 @@ public class Player
 	
 	public Card flip()
 	{
-		return hand.get(0); // Again need to fix
+		return hand.remove(0); // Pops the zeroth card off the hand.
 	}
 	
 	public void draw(Deck deck)
